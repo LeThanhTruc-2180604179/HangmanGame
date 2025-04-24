@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman Game – FinisherHeader Background</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="finisher-header">
+    <div class="scaled-content">
+      <!-- SETTINGS PANEL -->
+      <div class="settings-panel">
+        <button class="settings-btn" id="settingsBtn">⚙️</button>
+        <div class="settings-menu" id="settingsMenu">
+          <div class="audio-control">
+            <label for="musicVolume">Nhạc nền</label>
+            <input type="range" id="musicVolume" min="0" max="1" step="0.1" value="0.4" />
+          </div>
+          <div class="audio-control">
+            <label for="soundFxVolume">Hiệu ứng</label>
+            <input type="range" id="soundFxVolume" min="0" max="1" step="0.1" value="1" />
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME CONTAINER -->
+      <div class="container">
+        <!-- Welcome Page -->
+        <div id="welcomePage" class="page active-page">
+          <h1>HANGMAN</h1>
+          <div id="welcomeContent">
+            <p>Chào mừng đến với trò chơi Hangman!</p>
+            <div class="buttons-container">
+              <button class="btn btn-primary btn-large" id="startButton">Bắt đầu chơi</button>
+              <button class="btn" id="instructionsButton">Hướng dẫn</button>
+            </div>
+          </div>
+          <!-- Instructions Section -->
+          <div class="instructions" id="instructionsSection" style="display:none;">
+            <h2>Hướng dẫn</h2>
+            <div class="current-instruction" id="currentInstruction"></div>
+            <div class="slider-container" id="instructionsSlider">
+              <div class="slider">
+                <div class="slider-image">
+                  <img src="public/images/huongdan111.png" alt="Hướng dẫn 1" />
+                </div>
+                <div class="slider-image">
+                  <img src="public/images/Huongdan222.png" alt="Hướng dẫn 2" />
+                </div>
+                <div class="slider-image">
+                  <img src="public/images/Huongdan333.png" alt="Hướng dẫn 3" />
+                </div>
+                <div class="slider-image">
+                  <img src="public/images/Huongdan444.png" alt="Hướng dẫn 4" />
+                </div>
+              </div>
+              <button class="slider-btn prev" id="prevSlideBtn">❮</button>
+              <button class="slider-btn next" id="nextSlideBtn">❯</button>
+            </div>
+            <div class="buttons-container">
+              <button class="btn" id="backToWelcomeContentButton">Quay lại</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mode Selection Page -->
+        <div id="modePage" class="page">
+          <h1>Chọn chế độ chơi</h1>
+          <div class="mode-card" data-mode="classic"><h3>Cổ điển</h3><p>Chế độ truyền thống với từ ngẫu nhiên.</p></div>
+          <div class="mode-card" data-mode="themed"><h3>Theo chủ đề</h3><p>Từ thuộc các chủ đề cụ thể.</p></div>
+          <div class="mode-card" data-mode="timed"><h3>Đua thời gian</h3><p>Đoán nhanh với thời gian giới hạn.</p></div>
+          <div class="mode-card" data-mode="team"><h3>Đấu đội</h3><p>Chơi luân phiên với bạn bè.</p></div>
+          <div class="buttons-container">
+            <button class="btn" id="backToWelcomeButton">Quay lại</button>
+          </div>
+        </div>
+
+        <!-- Game Page -->
+        <div id="gamePage" class="page">
+          <div class="game-info">
+            <div class="score">Điểm: <span id="scoreValue">0</span></div>
+            <div class="high-score">Điểm cao nhất: <span id="highScoreValue">0</span></div>
+            <div class="lives">Mạng: <span id="livesValue">6</span></div>
+            <div class="timer" id="gameTimer">00:00</div>
+          </div>
+          <div class="game-container">
+            <div class="hangman-drawing">
+              <svg viewBox="0 0 200 200">
+                <line x1="20" y1="180" x2="180" y2="180" class="hangman-part" />
+                <line x1="40" y1="180" x2="40" y2="20" class="hangman-part" />
+                <line x1="40" y1="20" x2="120" y2="20" class="hangman-part" />
+                <line x1="120" y1="20" x2="120" y2="40" class="hangman-part" />
+                <circle cx="120" cy="60" r="20" class="hangman-part" id="head" style="display:none;" />
+                <line x1="120" y1="80" x2="120" y2="130" class="hangman-part" id="body" style="display:none;" />
+                <line x1="120" y1="90" x2="90" y2="110" class="hangman-part" id="leftArm" style="display:none;" />
+                <line x1="120" y1="90" x2="150" y2="110" class="hangman-part" id="rightArm" style="display:none;" />
+                <line x1="120" y1="130" x2="90" y2="160" class="hangman-part" id="leftLeg" style="display:none;" />
+                <line x1="120" y1="130" x2="150" y2="160" class="hangman-part" id="rightLeg" style="display:none;" />
+              </svg>
+            </div>
+            <div class="hint-container" id="hintContainer">Gợi ý: <span id="hintText"></span></div>
+            <div class="word-display" id="wordDisplay"></div>
+            <div class="game-status" id="gameStatus"></div>
+            <div class="keyboard" id="keyboard"></div>
+            <div class="buttons-container">
+              <button class="btn" id="newGameButton">Từ mới</button>
+              <button class="btn" id="backToModeButton">Chọn chế độ</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Setup Page -->
+        <div id="teamSetupPage" class="page">
+          <h1>Thiết lập chế độ đấu đội</h1>
+          <div class="form-group">
+            <label for="customWord">Nhập từ cần đoán:</label>
+            <input type="password" id="customWord" placeholder="Nhập từ hoặc cụm từ" />
+          </div>
+          <div class="form-group">
+            <label for="customHint">Gợi ý (tùy chọn):</label>
+            <input type="text" id="customHint" placeholder="Nhập gợi ý" />
+          </div>
+          <div class="buttons-container">
+            <button class="btn btn-primary" id="startTeamGameButton">Bắt đầu chơi</button>
+            <button class="btn" id="backFromTeamSetupButton">Quay lại</button>
+          </div>
+        </div>
+
+        <!-- Theme Selection Page -->
+        <div id="themePage" class="page">
+          <h1>Chọn chủ đề</h1>
+          <div class="mode-card" data-theme="animals"><h3>Động vật</h3><p>Các loài động vật.</p></div>
+          <div class="mode-card" data-theme="food"><h3>Thức ăn</h3><p>Món ăn & đồ uống.</p></div>
+          <div class="mode-card" data-theme="countries"><h3>Quốc gia</h3><p>Tên quốc gia.</p></div>
+          <div class="mode-card" data-theme="sports"><h3>Thể thao</h3><p>Các môn thể thao.</p></div>
+          <div class="buttons-container">
+            <button class="btn" id="backFromThemeButton">Quay lại</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Modal -->
+      <div class="modal" id="resultModal">
+        <div class="modal-content">
+          <div class="result-emoji" id="resultEmoji"></div>
+          <h2 id="resultTitle"></h2>
+          <p id="resultMessage"></p>
+          <p>Từ cần đoán: <strong id="correctWord"></strong></p>
+          <div class="buttons-container">
+            <button class="btn btn-primary" id="playAgainButton">Chơi lại</button>
+            <button class="btn" id="backToHomeButton">Về trang chủ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="backgroundMusic" loop>
+    <source src="public/sounds/[Official] Celeste B-Sides - 05 - 2 Mello - Mirror Temple (Mirror Magic Mix).mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="correctSound">
+    <source src="public/sounds/done.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="wrongSound">
+    <source src="public/sounds/click-21156.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="winSound">
+    <source src="public/sounds/youwon.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="loseSound">
+    <source src="public/sounds/lose_sound.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="clickSound">
+    <source src="public/sounds/click_done.mp3" type="audio/mpeg" />   <!-- Click nút -->
+  </audio>
+
+  <!-- Scripts -->
+  <script src="lib/finisherjs/finisher-header.es5.min.js"></script>
+  <script src="lib/data/gameData.js"></script>
+  <script src="lib/logic/gameLogic.js"></script>
+  <script type="text/javascript">
+    new FinisherHeader({
+      "count": 30,
+      "size": { "min": 2, "max": 40, "pulse": 0 },
+      "speed": { "x": { "min": 0, "max": 0.5 }, "y": { "min": 0, "max": 0.2 } },
+      "colors": { "background": "#000000", "particles": ["#ff926b", "#87ddfe", "#acaaff", "#1bffc2", "#f9a5fe"] },
+      "blending": "screen",
+      "opacity": { "center": 1, "edge": 1 },
+      "skew": 0,
+      "shapes": ["c", "s", "t"]
+    });
+  </script>
+</body>
+</html>
