@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hangman Game – FinisherHeader Background</title>
+
+  <!-- google form  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -30,11 +36,14 @@
         <div id="welcomePage" class="page active-page">
           <h1>HANGMAN</h1>
           <div id="welcomeContent">
-            <p>Chào mừng đến với trò chơi Hangman!</p>
+            <div class="image_welcome">
+              <img src="public/images/Hangman.jpg" alt="Hangman" />
+            </div>
             <div class="buttons-container">
               <button class="btn btn-primary btn-large" id="startButton">Bắt đầu chơi</button>
               <button class="btn" id="instructionsButton">Hướng dẫn</button>
             </div>
+          
           </div>
           <!-- Instructions Section -->
           <div class="instructions" id="instructionsSection" style="display:none;">
@@ -158,39 +167,70 @@
 
   <!-- Audio Elements -->
   <audio id="backgroundMusic" loop>
-    <source src="public/sounds/[Official] Celeste B-Sides - 05 - 2 Mello - Mirror Temple (Mirror Magic Mix).mp3" type="audio/mpeg" />
+    <source src="public/sounds/[Official] Celeste B-Sides - 05 - 2 Mello - Mirror Temple (Mirror Magic Mix).mp3" type="audio/mpeg" /> <!-- Nhạc nền -->
   </audio>
   <audio id="correctSound">
-    <source src="public/sounds/done.mp3" type="audio/mpeg" />
+    <source src="public/sounds/done.mp3" type="audio/mpeg" />  <!-- Đúng -->
   </audio>
   <audio id="wrongSound">
-    <source src="public/sounds/click-21156.mp3" type="audio/mpeg" />
+    <source src="public/sounds/click-21156.mp3" type="audio/mpeg" />  <!-- Sai -->
   </audio>
   <audio id="winSound">
-    <source src="public/sounds/youwon.mp3" type="audio/mpeg" />
+    <source src="public/sounds/youwon.mp3" type="audio/mpeg" />   <!-- Thắng -->
   </audio>
   <audio id="loseSound">
-    <source src="public/sounds/lose_sound.mp3" type="audio/mpeg" />
+    <source src="public/sounds/lose_sound.mp3" type="audio/mpeg" /> <!-- Thua -->
   </audio>
   <audio id="clickSound">
     <source src="public/sounds/click_done.mp3" type="audio/mpeg" />   <!-- Click nút -->
   </audio>
-
+  <audio id="hoverSound">
+    <source src="public/sounds/HOVER.mp3" type="audio/mpeg" />   <!-- Hover button -->
+  </audio>
   <!-- Scripts -->
   <script src="lib/finisherjs/finisher-header.es5.min.js"></script>
   <script src="lib/data/gameData.js"></script>
   <script src="lib/logic/gameLogic.js"></script>
   <script type="text/javascript">
     new FinisherHeader({
-      "count": 30,
-      "size": { "min": 2, "max": 40, "pulse": 0 },
-      "speed": { "x": { "min": 0, "max": 0.5 }, "y": { "min": 0, "max": 0.2 } },
-      "colors": { "background": "#000000", "particles": ["#ff926b", "#87ddfe", "#acaaff", "#1bffc2", "#f9a5fe"] },
+      "count": 100,
+      "size": {
+        "min": 1,
+        "max": 27,
+        "pulse": 0.1
+      },
+      "speed": {
+        "x": {
+          "min": 0,
+          "max": 0.7
+        },
+        "y": {
+          "min": 0,
+          "max": 0.9
+        }
+      },
+      "colors": {
+        "background": "#000000",
+        "particles": [
+          "#ffffff",
+          "#87ddfe",
+          "#acaaff",
+          "#1bffc2",
+          "#f88aff"
+        ]
+      },
       "blending": "screen",
-      "opacity": { "center": 1, "edge": 1 },
+      "opacity": {
+        "center": 0,
+        "edge": 0.4
+      },
       "skew": 0,
-      "shapes": ["c", "s", "t"]
+      "shapes": [
+        "c",
+        "s",
+        "t"
+      ]
     });
-  </script>
+    </script>
 </body>
 </html>
