@@ -3,35 +3,37 @@
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
 }
 
 html, body {
   height: 100%;
   color: #fff;
-  overflow-x: hidden; /* Ngăn tràn ngang */
+  overflow-x: hidden;
 }
 
 /* Khung nền particle */
 .finisher-header {
-  position: fixed; /* Cố định nền */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Chiếm toàn bộ chiều cao viewport */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 1; /* Đặt z-index thấp để nền nằm dưới nội dung */
+  z-index: 1;
 }
+
 /* Lớp thu nhỏ nội dung */
 .scaled-content {
-  transform: scale(0.8); /* Thu nhỏ 20% */
-  transform-origin: center center; /* Thu nhỏ từ chính giữa */
-  width: 100%; /* Chiếm toàn bộ chiều rộng */
-  max-width: 1000px; /* Giới hạn chiều rộng tối đa để tránh tràn */
-  margin: 0 auto; /* Căn giữa */
+  transform: scale(0.8);
+  transform-origin: center center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +52,46 @@ html, body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   overflow: hidden;
-  margin: 0 auto; /* Đảm bảo container luôn căn giữa */
+  margin: 0 auto;
+  position: relative;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+.container::after, .container::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 10px;
+  border: 10px solid transparent;
+  border-image: linear-gradient(var(--angle), #1bffc2,
+  #acaaff,
+  #87ddfe
+  
+  ) 1;
+  animation: 3s spin linear infinite;
+}
+
+.container::before{
+  filter: blur(31.5rem);
+  opacity: 0.5;
+}
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg; 
+  }
 }
 
 h1 {
@@ -62,15 +103,16 @@ h1 {
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
-}
-.image_welcome{
-  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 60px;
 }
 
 h2 {
   text-align: center;
   margin-bottom: 15px;
   font-size: 1.8rem;
+  padding-bottom: 30px;
+  font-family: "Press Start 2P", system-ui;
 }
 
 p {
@@ -79,56 +121,60 @@ p {
   text-align: center;
 }
 
-.btn {
-  background-color: #4e54c8;
+/* New Card-like Button Styles */
+.card-btn {
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  border: none;
+  border: 2px solid white;
   padding: 12px 25px;
-  border-radius: 50px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
   transition: all 0.3s ease;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 250px; /* Fixed width to ensure buttons are the same size */
 }
 
-.btn:hover {
-  background-color: #34388e;
+.card-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.btn:active {
+.card-btn:active {
   transform: translateY(1px);
 }
 
-.btn-large {
-  font-size: 1.2rem;
-  padding: 15px 30px;
+.card-btn.btn-primary {
+  background-color: rgba(76, 175, 80, 0.5);
 }
 
-.btn-primary {
-  background-color: #4CAF50;
+.card-btn.btn-primary:hover {
+  background-color: rgba(76, 175, 80, 0.7);
 }
 
-.btn-primary:hover {
-  background-color: #388E3C;
+.card-btn.btn-secondary {
+  background-color: rgba(255, 118, 117, 0.5);
 }
 
-.btn-secondary {
-  background-color: #ff7675;
-}
-
-.btn-secondary:hover {
-  background-color: #d63031;
+.card-btn.btn-secondary:hover {
+  background-color: rgba(255, 118, 117, 0.7);
 }
 
 .buttons-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin: 20px 0;
+}
+
+.vertical-buttons {
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
 }
 
 .page {
@@ -145,8 +191,53 @@ p {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Trang hướng dẫn */
-.instructions {
+/* Play Button and Text */
+.play-button-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.play-icon {
+  font-size: 2rem;
+  color: white;
+}
+
+.play-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* High Score Display */
+.high-score-display {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.8;
+}
+
+/* Trang hướng dẫn, cài đặt và điểm số */
+.instructions, .settings-section, .score-section {
   background-color: rgb(0 0 0 / 41%);
   padding: 20px;
   border-radius: 10px;
@@ -165,6 +256,36 @@ p {
   min-height: 40px;
 }
 
+/* Score Section */
+.score-section .score-entry {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.score-section .score-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.score-section .score-value {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.score-section .score-number {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1bffc2;
+}
+
 /* Slider trong trang hướng dẫn */
 .slider-container {
   position: relative;
@@ -174,15 +295,20 @@ p {
   height: 250px;
 }
 
-
+.slider {
+  display: flex;
+  width: 400%; /* 4 slides, so 400% width */
+  height: 100%;
+  transition: transform 0.5s ease;
+}
 
 .slider-image {
-  flex: 0 0 100%;
-  width: 100%;
+  flex: 0 0 25%; /* Each slide takes exactly 25% of the slider width (100% / 4 slides) */
+  width: 25%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
 }
 
 .slider-image img {
@@ -224,11 +350,12 @@ p {
 .mode-card {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   margin: 15px 0;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
 }
 
 .mode-card:hover {
@@ -239,6 +366,13 @@ p {
 .mode-card h3 {
   margin-bottom: 10px;
   font-size: 1.5rem;
+}
+
+.mode-high-score {
+  font-size: 0.9rem;
+  color: #1bffc2;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 /* Trang chơi chính */
@@ -419,6 +553,7 @@ p {
   }
   .slider-container {
     max-width: 100%;
+    height: 200px; /* Adjusted for smaller screens */
   }
   .slider-image {
     height: 200px;
@@ -428,98 +563,56 @@ p {
     padding: 8px 12px;
     font-size: 1rem;
   }
+  .card-btn {
+    width: 180px; /* Slightly smaller for smaller screens */
+  }
 }
 
-/* Settings Panel */
-.settings-panel {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 10;
-}
-
-.settings-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+/* Settings Section */
+.settings-section .audio-control {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 10px;
+  padding-bottom: 40px;
 }
 
-.settings-btn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.settings-menu {
-  position: absolute;
-  top: 50px;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  width: 200px;
-  display: none;
-}
-
-.settings-menu.show {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-.audio-control {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.audio-control label {
+.settings-section .audio-control label {
   flex: 1;
-  margin-right: 10px;
+  font-size: 1.1rem;
+  color: #fff;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+.settings-section .audio-control input[type="range"] {
+  flex: 2;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 10px;
 }
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
+.settings-section .audio-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: .4s;
-  border-radius: 34px;
-  display: flex;
-  transition: transform 0.5s ease;
+  border: 2px solid #4e54c8;
 }
 
-
-
-input:checked + .slider {
-  background-color: #4CAF50;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #4CAF50;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
+.settings-section .audio-control input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #4e54c8;
 }
 
 /* SVG Hangman */
@@ -546,7 +639,8 @@ svg {
   font-size: 1.1rem;
 }
 
-.form-group input {
+.form-group input[type="text"],
+.form-group input[type="password"] {
   width: 100%;
   max-width: 300px;
   padding: 10px;
@@ -559,4 +653,143 @@ svg {
 
 .form-group input::placeholder {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231bffc2' d='M0 0h10L5 6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #1bffc2;
+  box-shadow: 0 0 5px rgba(27, 255, 194, 0.5);
+}
+
+/* Team Scores */
+.team-scores {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-score {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Team Result Page */
+.winner-announcement {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1bffc2;
+}
+
+/* Team Setup Page Specific Styles */
+.team-setup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.team-name-group,
+.round-count-group,
+.play-style-group,
+.timer-duration-group {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+/* Scrollbar for round-count select */
+.round-count-group select {
+  max-height: 150px; /* Limit height to show ~5 options at a time */
+  overflow-y: auto;
+}
+
+/* Customize scrollbar for WebKit browsers */
+.round-count-group select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.round-count-group select::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.round-count-group select::-webkit-scrollbar-thumb {
+  background: #1bffc2;
+  border-radius: 5px;
+}
+
+.round-count-group select::-webkit-scrollbar-thumb:hover {
+  background: #17d9a8;
+}
+
+/* Customize scrollbar for Firefox */
+.round-count-group select {
+  scrollbar-width: thin;
+  scrollbar-color: #1bffc2 rgba(255, 255, 255, 0.1);
+}
+
+/* Options styling */
+.round-count-group select option,
+.play-style-group select option,
+.timer-duration-group select option {
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* ========== RESPONSIVE GENERIC ≤ 768 px (trước) ========== */
+@media(max-width:768px){
+  .container{width:95%;padding:20px;}
+  h1{font-size:2rem;}
+  .letter-box{width:30px;height:30px;font-size:1.5rem;}
+  .key{width:30px;height:30px;font-size:.9rem;margin:3px;}
+  .slider-container{max-width:100%;height:200px;}
+  .slider-image{height:200px;padding:5px;}
+  .slider-btn{padding:8px 12px;font-size:1rem;}
+  .card-btn{width:180px;}
+}
+
+/* ========== iPhone SE / ≤ 375 px ========== */
+@media(max-width:375px){
+  /* bỏ flex để tránh layout tính toán thừa */
+  .finisher-header{display:block;}
+  .scaled-content{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%) scale(.70); /* rộng hơn */
+    width:100%;
+    max-width:1000px;
+    pointer-events:auto;
+  }
+}
+
+/* ========== SMALL PHONES 376–480 px ========== */
+@media(min-width:376px) and (max-width:480px){
+  .scaled-content{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%) scale(.78);
+  }
 }
