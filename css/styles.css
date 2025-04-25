@@ -75,10 +75,10 @@ html, body {
   border: 10px solid transparent;
   border-image: linear-gradient(var(--angle), #1bffc2,
   #acaaff,
-  #87ddfe
+  #55adcf
   
   ) 1;
-  animation: 3s spin linear infinite;
+  animation: 2s spin linear infinite;
 }
 
 .container::before{
@@ -760,7 +760,7 @@ svg {
 
 
 /* ========== RESPONSIVE GENERIC ≤ 768 px (trước) ========== */
-@media(max-width:768px){
+@media(max-width:868px){
   .container{width:95%;padding:20px;}
   h1{font-size:2rem;}
   .letter-box{width:30px;height:30px;font-size:1.5rem;}
