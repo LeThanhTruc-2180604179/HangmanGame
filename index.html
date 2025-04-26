@@ -164,6 +164,7 @@
             <div class="game-status" id="gameStatus"></div>
             <div class="keyboard" id="keyboard"></div>
             <div class="buttons-container vertical-buttons">
+              <button class="card-btn" id="hintButton">Gợi ý từ khóa</button>
               <button class="card-btn" id="newGameButton">Từ mới</button>
               <button class="card-btn" id="backToModeButton">Chọn chế độ</button>
             </div>
@@ -183,7 +184,7 @@
               <input type="text" id="teamName1" placeholder="Nhập tên đội 2" data-team-index="1" />
             </div>
             <div class="form-group round-count-group">
-              <label for="roundCount">Số vòng đấu:</label>
+              <label for="roundCount">Số vòng:</label>
               <select id="roundCount">
                 <option value="4">4</option>
                 <option value="6" selected>6</option>
@@ -238,17 +239,17 @@
             <button class="card-btn" id="backFromTeamWordInputButton">Quay lại</button>
           </div>
         </div>
-<!-- Confirm Resume Modal -->
-<div class="modal" id="resumeModal">
-  <div class="modal-content">
-    <h2 id="resumeModalTitle">Tiếp tục chơi?</h2>
-    <p id="resumeModalMessage"></p>
-    <div class="buttons-container vertical-buttons">
-      <button class="card-btn btn-primary" id="resumeGameButton">Tiếp tục chơi</button>
-      <button class="card-btn btn-secondary" id="newGameButtonModal">Chơi mới</button>
-    </div>
-  </div>
-</div>
+        <!-- Confirm Resume Modal -->
+        <div class="modal" id="resumeModal">
+          <div class="modal-content">
+            <h2 id="resumeModalTitle">Tiếp tục chơi?</h2>
+            <p id="resumeModalMessage"></p>
+            <div class="buttons-container vertical-buttons">
+              <button class="card-btn btn-primary" id="resumeGameButton">Tiếp tục chơi</button>
+              <button class="card-btn btn-secondary" id="newGameButtonModal">Chơi mới</button>
+            </div>
+          </div>
+        </div>
         <!-- Team Result Page -->
         <div id="teamResultPage" class="page">
           <h1>Tỉ số cuối cùng</h1>
@@ -262,7 +263,7 @@
         <!-- Theme Selection Page -->
         <div id="themePage" class="page">
           <h1>Chọn chủ đề</h1>
-          <div class="mode-card" data-theme="animals"><h3>Động vật</h3><p>Các loài động vật.</p></div>
+          <div class="mode-card" sartifactsdata-theme="animals"><h3>Động vật</h3><p>Các loài động vật.</p></div>
           <div class="mode-card" data-theme="food"><h3>Thức ăn</h3><p>Món ăn & đồ uống.</p></div>
           <div class="mode-card" data-theme="countries"><h3>Quốc gia</h3><p>Tên quốc gia.</p></div>
           <div class="mode-card" data-theme="sports"><h3>Thể thao</h3><p>Các môn thể thao.</p></div>
@@ -315,6 +316,8 @@
   <script src="lib/finisherjs/finisher-header.es5.min.js"></script>
   <script src="lib/data/gameData.js"></script>
   <script src="lib/logic/gameLogic.js"></script>
+
+  
   <script type="text/javascript">
     new FinisherHeader({
       "count": 100,

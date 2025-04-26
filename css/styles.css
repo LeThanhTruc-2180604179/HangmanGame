@@ -1,3 +1,4 @@
+/* Reset và cài đặt cơ bản */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -29,10 +30,10 @@ html, body {
 
 /* Lớp thu nhỏ nội dung */
 .scaled-content {
-  transform: scale(0.8);
+  transform: scale(0.693); /* Tăng từ 0.66 (0.66 * 1.05) */
   transform-origin: center center;
   width: 100%;
-  max-width: 1000px;
+  max-width: 866.25px; /* Tăng từ 825px (825 * 1.05) */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -43,13 +44,13 @@ html, body {
 
 /* Container game */
 .container {
-  width: 90%;
-  max-width: 800px;
+  width: 77.9625%; /* Tăng từ 74.25% (74.25 * 1.05) */
+  max-width: 693px; /* Tăng từ 660px (660 * 1.05) */
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
+  padding: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
+  box-shadow: 0 8.6625px 25.9875px rgba(0, 0, 0, 0.3); /* Tăng từ 8.25px, 24.75px */
   transition: all 0.5s ease;
   overflow: hidden;
   margin: 0 auto;
@@ -71,52 +72,48 @@ html, body {
   left: 50%;
   translate: -50% -50%;
   z-index: -1;
-  padding: 10px;
-  border: 10px solid transparent;
-  border-image: linear-gradient(var(--angle), #1bffc2,
-  #acaaff,
-  #55adcf
-  
-  ) 1;
+  padding: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  border: 8.6625px solid transparent; /* Tăng từ 8.25px (8.25 * 1.05) */
+  border-image: linear-gradient(var(--angle), #1bffc2, #acaaff, #55adcf) 1;
   animation: 2s spin linear infinite;
 }
 
-.container::before{
+.container::before {
   filter: blur(31.5rem);
   opacity: 0.5;
 }
 @keyframes spin {
-  from{
+  from {
     --angle: 0deg;
   }
-  to{
+  to {
     --angle: 360deg; 
   }
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 2.5rem;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
+  font-size: 2.165625rem; /* Tăng từ 2.0625rem (2.0625 * 1.05) */
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 1.7325px 1.7325px 3.465px rgba(0, 0, 0, 0.3); /* Tăng từ 1.65px, 3.3px */
   font-family: "Press Start 2P", system-ui;
   font-weight: 400;
   font-style: normal;
-  padding-bottom: 50px;
-  padding-top: 60px;
+  padding-bottom: 43.3125px; /* Tăng từ 41.25px (41.25 * 1.05) */
+  padding-top: 51.975px; /* Tăng từ 49.5px (49.5 * 1.05) */
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  padding-bottom: 30px;
+  margin-bottom: 12.99375px; /* Tăng từ 12.375px (12.375 * 1.05) */
+  font-size: 1.55925rem; /* Tăng từ 1.485rem (1.485 * 1.05) */
+  padding-bottom: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
   font-family: "Press Start 2P", system-ui;
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   line-height: 1.6;
   text-align: center;
 }
@@ -125,27 +122,27 @@ p {
 .card-btn {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  border: 2px solid white;
-  padding: 12px 25px;
-  border-radius: 10px;
+  border: 1.7325px solid white; /* Tăng từ 1.65px (1.65 * 1.05) */
+  padding: 10.395px 21.65625px; /* Tăng từ 9.9px, 20.625px (9.9 * 1.05, 20.625 * 1.05) */
+  border-radius: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.86625rem; /* Tăng từ 0.825rem (0.825 * 1.05) */
   font-weight: bold;
   transition: all 0.3s ease;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  box-shadow: 0 3.465px 6.93px rgba(0, 0, 0, 0.2); /* Tăng từ 3.3px, 6.6px */
   text-align: center;
-  width: 250px; /* Fixed width to ensure buttons are the same size */
+  width: 216.5625px; /* Tăng từ 206.25px (206.25 * 1.05) */
 }
 
 .card-btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2.59875px); /* Tăng từ -2.475px (-2.475 * 1.05) */
+  box-shadow: 0 5.1975px 10.395px rgba(0, 0, 0, 0.3); /* Tăng từ 4.95px, 9.9px */
 }
 
 .card-btn:active {
-  transform: translateY(1px);
+  transform: translateY(0.86625px); /* Tăng từ 0.825px (0.825 * 1.05) */
 }
 
 .card-btn.btn-primary {
@@ -168,13 +165,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 17.325px 0; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 .vertical-buttons {
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
 }
 
 .page {
@@ -187,25 +184,25 @@ p {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(17.325px); } /* Tăng từ 16.5px (16.5 * 1.05) */
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Play Button and Text */
 .play-button-container {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 .play-button {
-  width: 80px;
-  height: 80px;
+  width: 69.3px; /* Tăng từ 66px (66 * 1.05) */
+  height: 69.3px; /* Tăng từ 66px (66 * 1.05) */
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 10px;
+  margin: 0 auto 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -216,22 +213,22 @@ p {
 }
 
 .play-icon {
-  font-size: 2rem;
+  font-size: 1.7325rem; /* Tăng từ 1.65rem (1.65 * 1.05) */
   color: white;
 }
 
 .play-text {
-  font-size: 1.2rem;
+  font-size: 1.0395rem; /* Tăng từ 0.99rem (0.99 * 1.05) */
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.7325px; /* Tăng từ 1.65px (1.65 * 1.05) */
 }
 
 /* High Score Display */
 .high-score-display {
   text-align: center;
-  margin-top: 20px;
-  font-size: 1rem;
+  margin-top: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
+  font-size: 0.86625rem; /* Tăng từ 0.825rem (0.825 * 1.05) */
   color: #fff;
   opacity: 0.8;
 }
@@ -239,29 +236,29 @@ p {
 /* Trang hướng dẫn, cài đặt và điểm số */
 .instructions, .settings-section, .score-section {
   background-color: rgb(0 0 0 / 41%);
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  padding: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
+  border-radius: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 .current-instruction {
   display: block;
   text-align: center;
-  margin: 15px 0;
-  font-size: 1.1rem;
+  margin: 12.99375px 0; /* Tăng từ 12.375px (12.375 * 1.05) */
+  font-size: 0.952875rem; /* Tăng từ 0.9075rem (0.9075 * 1.05) */
   color: #fff;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   line-height: 1.5;
-  min-height: 40px;
+  min-height: 34.65px; /* Tăng từ 33px (33 * 1.05) */
 }
 
 /* Score Section */
 .score-section .score-entry {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px 0;
+  border-radius: 6.93px; /* Tăng từ 6.6px (6.6 * 1.05) */
+  padding: 12.99375px; /* Tăng từ 12.375px (12.375 * 1.05) */
+  margin: 8.6625px 0; /* Tăng từ 8.25px (8.25 * 1.05) */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -269,19 +266,19 @@ p {
 }
 
 .score-section .score-label {
-  font-size: 1.2rem;
+  font-size: 1.0395rem; /* Tăng từ 0.99rem (0.99 * 1.05) */
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
 }
 
 .score-section .score-value {
-  font-size: 0.9rem;
+  font-size: 0.779625rem; /* Tăng từ 0.7425rem (0.7425 * 1.05) */
   opacity: 0.8;
-  margin-bottom: 5px;
+  margin-bottom: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
 }
 
 .score-section .score-number {
-  font-size: 1.1rem;
+  font-size: 0.952875rem; /* Tăng từ 0.9075rem (0.9075 * 1.05) */
   font-weight: bold;
   color: #1bffc2;
 }
@@ -291,8 +288,8 @@ p {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 10px;
-  height: 250px;
+  border-radius: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  height: 216.5625px; /* Tăng từ 206.25px (206.25 * 1.05) */
 }
 
 .slider {
@@ -315,8 +312,8 @@ p {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 6.93px; /* Tăng từ 6.6px (6.6 * 1.05) */
+  box-shadow: 0 1.7325px 3.465px rgba(0, 0, 0, 0.3); /* Tăng từ 1.65px, 3.3px */
 }
 
 .slider-btn {
@@ -326,9 +323,9 @@ p {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 8.6625px 12.99375px; /* Tăng từ 8.25px, 12.375px (8.25 * 1.05, 12.375 * 1.05) */
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.0395rem; /* Tăng từ 0.99rem (0.99 * 1.05) */
   border-radius: 50%;
   transition: all 0.3s ease;
 }
@@ -339,19 +336,19 @@ p {
 }
 
 .slider-btn.prev {
-  left: 10px;
+  left: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
 }
 
 .slider-btn.next {
-  right: 10px;
+  right: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
 }
 
 /* Trang chọn chế độ */
 .mode-card {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 10px;
-  margin: 15px 0;
+  border-radius: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  padding: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  margin: 12.99375px 0; /* Tăng từ 12.375px (12.375 * 1.05) */
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -360,18 +357,18 @@ p {
 
 .mode-card:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
+  transform: translateY(-4.33125px); /* Tăng từ -4.125px (-4.125 * 1.05) */
 }
 
 .mode-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
+  margin-bottom: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  font-size: 1.299375rem; /* Tăng từ 1.2375rem (1.2375 * 1.05) */
 }
 
 .mode-high-score {
-  font-size: 0.9rem;
+  font-size: 0.779625rem; /* Tăng từ 0.7425rem (0.7425 * 1.05) */
   color: #1bffc2;
-  margin-top: 10px;
+  margin-top: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
   font-weight: bold;
 }
 
@@ -383,35 +380,35 @@ p {
 }
 
 .hangman-drawing {
-  width: 240px;
-  height: 240px;
-  margin-bottom: 20px;
+  width: 207.9px; /* Tăng từ 198px (198 * 1.05) */
+  height: 207.9px; /* Tăng từ 198px (198 * 1.05) */
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   position: relative;
 }
 
 .hangman-part {
   position: absolute;
   stroke: white;
-  stroke-width: 4;
+  stroke-width: 3.465; /* Tăng từ 3.3 (3.3 * 1.05) */
   fill: none;
 }
 
 .word-display {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   flex-wrap: wrap;
 }
 
 .letter-box {
-  width: 40px;
-  height: 40px;
-  border-bottom: 3px solid white;
-  margin: 0 5px;
+  width: 34.65px; /* Tăng từ 33px (33 * 1.05) */
+  height: 34.65px; /* Tăng từ 33px (33 * 1.05) */
+  border-bottom: 2.59875px solid white; /* Tăng từ 2.475px (2.475 * 1.05) */
+  margin: 0 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.55925rem; /* Tăng từ 1.485rem (1.485 * 1.05) */
   font-weight: bold;
 }
 
@@ -419,19 +416,19 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 500px;
+  max-width: 433.125px; /* Tăng từ 412.5px (412.5 * 1.05) */
   margin: 0 auto;
 }
 
 .key {
-  width: 40px;
-  height: 40px;
+  width: 34.65px; /* Tăng từ 33px (33 * 1.05) */
+  height: 34.65px; /* Tăng từ 33px (33 * 1.05) */
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 5px;
+  margin: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: bold;
@@ -455,35 +452,35 @@ p {
 }
 
 .game-status {
-  margin: 20px 0;
-  font-size: 1.5rem;
+  margin: 17.325px 0; /* Tăng từ 16.5px (16.5 * 1.05) */
+  font-size: 1.299375rem; /* Tăng từ 1.2375rem (1.2375 * 1.05) */
   font-weight: bold;
   text-align: center;
-  min-height: 40px;
+  min-height: 34.65px; /* Tăng từ 33px (33 * 1.05) */
 }
 
 .game-info {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 8.6625px 17.325px; /* Tăng từ 8.25px, 16.5px (8.25 * 1.05, 16.5 * 1.05) */
+  border-radius: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
 }
 
 .hint-container {
   text-align: center;
-  margin: 20px 0;
+  margin: 17.325px 0; /* Tăng từ 16.5px (16.5 * 1.05) */
   font-style: italic;
 }
 
 .timer {
-  font-size: 1.2rem;
+  font-size: 1.0395rem; /* Tăng từ 0.99rem (0.99 * 1.05) */
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 5px 15px;
-  border-radius: 20px;
+  padding: 4.33125px 12.99375px; /* Tăng từ 4.125px, 12.375px (4.125 * 1.05, 12.375 * 1.05) */
+  border-radius: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 /* Modal kết quả */
@@ -502,12 +499,12 @@ p {
 
 .modal-content {
   background: linear-gradient(135deg, #6e8efb, #a777e3);
-  padding: 30px;
-  border-radius: 15px;
+  padding: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
+  border-radius: 12.99375px; /* Tăng từ 12.375px (12.375 * 1.05) */
   text-align: center;
-  max-width: 400px;
+  max-width: 346.5px; /* Tăng từ 330px (330 * 1.05) */
   width: 90%;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12.99375px 25.9875px rgba(0, 0, 0, 0.3); /* Tăng từ 12.375px, 24.75px */
   animation: modalFadeIn 0.5s ease;
 }
 
@@ -517,8 +514,8 @@ p {
 }
 
 .result-emoji {
-  font-size: 5rem;
-  margin-bottom: 20px;
+  font-size: 4.33125rem; /* Tăng từ 4.125rem (4.125 * 1.05) */
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 @keyframes pulse {
@@ -535,36 +532,62 @@ p {
 @media (max-width: 768px) {
   .container {
     width: 95%;
-    padding: 20px;
+    padding: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   }
   h1 {
-    font-size: 2rem;
+    font-size: 1.7325rem; /* Tăng từ 1.65rem (1.65 * 1.05) */
   }
   .letter-box {
-    width: 30px;
-    height: 30px;
-    font-size: 1.5rem;
+    width: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
+    height: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
+    font-size: 1.299375rem; /* Tăng từ 1.2375rem (1.2375 * 1.05) */
   }
   .key {
-    width: 30px;
-    height: 30px;
-    font-size: 0.9rem;
-    margin: 3px;
+    width: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
+    height: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
+    font-size: 0.779625rem; /* Tăng từ 0.7425rem (0.7425 * 1.05) */
+    margin: 2.59875px; /* Tăng từ 2.475px (2.475 * 1.05) */
   }
   .slider-container {
     max-width: 100%;
-    height: 200px; /* Adjusted for smaller screens */
+    height: 173.25px; /* Tăng từ 165px (165 * 1.05) */
   }
   .slider-image {
-    height: 200px;
-    padding: 5px;
+    height: 173.25px; /* Tăng từ 165px (165 * 1.05) */
+    padding: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   }
   .slider-btn {
-    padding: 8px 12px;
-    font-size: 1rem;
+    padding: 6.93px 10.395px; /* Tăng từ 6.6px, 9.9px (6.6 * 1.05, 9.9 * 1.05) */
+    font-size: 0.86625rem; /* Tăng từ 0.825rem (0.825 * 1.05) */
   }
   .card-btn {
-    width: 180px; /* Slightly smaller for smaller screens */
+    width: 155.925px; /* Tăng từ 148.5px (148.5 * 1.05) */
+  }
+}
+
+/* iPhone SE / ≤ 375px */
+@media (max-width: 375px) {
+  .finisher-header {
+    display: block;
+  }
+  .scaled-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.606375); /* Tăng từ 0.5775 (0.5775 * 1.05) */
+    width: 100%;
+    max-width: 866.25px; /* Tăng từ 825px (825 * 1.05) */
+    pointer-events: auto;
+  }
+}
+
+/* Small phones 376–480px */
+@media (min-width: 376px) and (max-width: 480px) {
+  .scaled-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.675675); /* Tăng từ 0.6435 (0.6435 * 1.05) */
   }
 }
 
@@ -573,14 +596,14 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0;
-  padding: 0 10px;
-  padding-bottom: 40px;
+  margin: 17.325px 0; /* Tăng từ 16.5px (16.5 * 1.05) */
+  padding: 0 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  padding-bottom: 34.65px; /* Tăng từ 33px (33 * 1.05) */
 }
 
 .settings-section .audio-control label {
   flex: 1;
-  font-size: 1.1rem;
+  font-size: 0.952875rem; /* Tăng từ 0.9075rem (0.9075 * 1.05) */
   color: #fff;
 }
 
@@ -588,67 +611,67 @@ p {
   flex: 2;
   -webkit-appearance: none;
   width: 100%;
-  height: 8px;
+  height: 6.93px; /* Tăng từ 6.6px (6.6 * 1.05) */
   background: #ddd;
-  border-radius: 5px;
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   outline: none;
-  margin-left: 10px;
+  margin-left: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
 }
 
 .settings-section .audio-control input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
+  height: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   background: #fff;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid #4e54c8;
+  border: 1.7325px solid #4e54c8; /* Tăng từ 1.65px (1.65 * 1.05) */
 }
 
 .settings-section .audio-control input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
+  height: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   background: #fff;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid #4e54c8;
+  border: 1.7325px solid #4e54c8; /* Tăng từ 1.65px (1.65 * 1.05) */
 }
 
 /* SVG Hangman */
 svg {
-  width: 240px;
-  height: 240px;
+  width: 207.9px; /* Tăng từ 198px (198 * 1.05) */
+  height: 207.9px; /* Tăng từ 198px (198 * 1.05) */
 }
 
 .hangman-part {
   stroke: white;
-  stroke-width: 4;
+  stroke-width: 3.465; /* Tăng từ 3.3 (3.3 * 1.05) */
   fill: none;
 }
 
 /* Form group for team setup */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
   text-align: center;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  margin-bottom: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
+  font-size: 0.952875rem; /* Tăng từ 0.9075rem (0.9075 * 1.05) */
 }
 
 .form-group input[type="text"],
 .form-group input[type="password"] {
   width: 100%;
-  max-width: 300px;
-  padding: 10px;
+  max-width: 259.875px; /* Tăng từ 247.5px (247.5 * 1.05) */
+  padding: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
   border: none;
-  border-radius: 5px;
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 1rem;
+  font-size: 0.86625rem; /* Tăng từ 0.825rem (0.825 * 1.05) */
 }
 
 .form-group input::placeholder {
@@ -657,47 +680,47 @@ svg {
 
 .form-group select {
   width: 100%;
-  max-width: 300px;
-  padding: 10px;
+  max-width: 259.875px; /* Tăng từ 247.5px (247.5 * 1.05) */
+  padding: 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
   border: none;
-  border-radius: 5px;
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  font-size: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.86625rem; /* Tăng từ 0.825rem (0.825 * 1.05) */
+  border: 0.86625px solid rgba(255, 255, 255, 0.3); /* Tăng từ 0.825px (0.825 * 1.05) */
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%231bffc2' d='M0 0h10L5 6z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8.6625' height='5.1975' viewBox='0 0 10 6'%3E%3Cpath fill='%231bffc2' d='M0 0h10L5 6z'/%3E%3C/svg%3E"); /* Tăng từ 8.25, 4.95 */
   background-repeat: no-repeat;
-  background-position: right 10px center;
-  padding-right: 30px;
+  background-position: right 8.6625px center; /* Tăng từ 8.25px (8.25 * 1.05) */
+  padding-right: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
 }
 
 .form-group select:focus {
   outline: none;
   border-color: #1bffc2;
-  box-shadow: 0 0 5px rgba(27, 255, 194, 0.5);
+  box-shadow: 0 0 4.33125px rgba(27, 255, 194, 0.5); /* Tăng từ 4.125px (4.125 * 1.05) */
 }
 
 /* Team Scores */
 .team-scores {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 .team-score {
   display: inline-block;
-  margin: 0 10px;
-  font-size: 1.1rem;
+  margin: 0 8.6625px; /* Tăng từ 8.25px (8.25 * 1.05) */
+  font-size: 0.952875rem; /* Tăng từ 0.9075rem (0.9075 * 1.05) */
   font-weight: bold;
 }
 
 /* Team Result Page */
 .winner-announcement {
   text-align: center;
-  margin: 20px 0;
-  font-size: 1.5rem;
+  margin: 17.325px 0; /* Tăng từ 16.5px (16.5 * 1.05) */
+  font-size: 1.299375rem; /* Tăng từ 1.2375rem (1.2375 * 1.05) */
   font-weight: bold;
   color: #1bffc2;
 }
@@ -715,29 +738,29 @@ svg {
 .play-style-group,
 .timer-duration-group {
   width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+  max-width: 346.5px; /* Tăng từ 330px (330 * 1.05) */
+  margin-bottom: 17.325px; /* Tăng từ 16.5px (16.5 * 1.05) */
 }
 
 /* Scrollbar for round-count select */
 .round-count-group select {
-  max-height: 150px; /* Limit height to show ~5 options at a time */
+  max-height: 129.9375px; /* Tăng từ 123.75px (123.75 * 1.05) */
   overflow-y: auto;
 }
 
 /* Customize scrollbar for WebKit browsers */
 .round-count-group select::-webkit-scrollbar {
-  width: 8px;
+  width: 6.93px; /* Tăng từ 6.6px (6.6 * 1.05) */
 }
 
 .round-count-group select::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
 }
 
 .round-count-group select::-webkit-scrollbar-thumb {
   background: #1bffc2;
-  border-radius: 5px;
+  border-radius: 4.33125px; /* Tăng từ 4.125px (4.125 * 1.05) */
 }
 
 .round-count-group select::-webkit-scrollbar-thumb:hover {
@@ -756,40 +779,4 @@ svg {
 .timer-duration-group select option {
   background-color: #333;
   color: #fff;
-}
-
-
-/* ========== RESPONSIVE GENERIC ≤ 768 px (trước) ========== */
-@media(max-width:868px){
-  .container{width:95%;padding:20px;}
-  h1{font-size:2rem;}
-  .letter-box{width:30px;height:30px;font-size:1.5rem;}
-  .key{width:30px;height:30px;font-size:.9rem;margin:3px;}
-  .slider-container{max-width:100%;height:200px;}
-  .slider-image{height:200px;padding:5px;}
-  .slider-btn{padding:8px 12px;font-size:1rem;}
-  .card-btn{width:180px;}
-}
-
-/* ========== iPhone SE / ≤ 375 px ========== */
-@media(max-width:375px){
-  /* bỏ flex để tránh layout tính toán thừa */
-  .finisher-header{display:block;}
-  .scaled-content{
-    position:absolute;
-    top:50%;left:50%;
-    transform:translate(-50%,-50%) scale(.70); /* rộng hơn */
-    width:100%;
-    max-width:1000px;
-    pointer-events:auto;
-  }
-}
-
-/* ========== SMALL PHONES 376–480 px ========== */
-@media(min-width:376px) and (max-width:480px){
-  .scaled-content{
-    position:absolute;
-    top:50%;left:50%;
-    transform:translate(-50%,-50%) scale(.78);
-  }
 }
