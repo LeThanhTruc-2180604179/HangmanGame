@@ -780,3 +780,22 @@ svg {
   background-color: #333;
   color: #fff;
 }
+
+/* Gỗ đậm hơn, có vân nhẹ */
+#gallows { stroke-linejoin: round; }
+
+/* Person swing animation */
+@keyframes swing {
+  0%   { transform: rotate(-6deg); }
+  50%  { transform: rotate(6deg); }
+  100% { transform: rotate(-6deg); }
+}
+
+.swing {
+  transform-origin: 140px 40px;   /* điểm xoay tại móc treo */
+  animation: swing 2.2s ease-in-out infinite;
+}
+
+/* Trạng thái thua cuộc */
+.dead  .hangman-part,
+.dead  #head { stroke: #ff3b3b; fill: #ff3b3b; }

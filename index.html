@@ -146,17 +146,43 @@
           </div>
           <div class="game-container">
             <div class="hangman-drawing">
-              <svg viewBox="0 0 200 200">
-                <line x1="20" y1="180" x2="180" y2="180" class="hangman-part" />
-                <line x1="40" y1="180" x2="40" y2="20" class="hangman-part" />
-                <line x1="40" y1="20" x2="120" y2="20" class="hangman-part" />
-                <line x1="120" y1="20" x2="120" y2="40" class="hangman-part" />
-                <circle cx="120" cy="60" r="20" class="hangman-part" id="head" style="display:none;" />
-                <line x1="120" y1="80" x2="120" y2="130" class="hangman-part" id="body" style="display:none;" />
-                <line x1="120" y1="90" x2="90" y2="110" class="hangman-part" id="leftArm" style="display:none;" />
-                <line x1="120" y1="90" x2="150" y2="110" class="hangman-part" id="rightArm" style="display:none;" />
-                <line x1="120" y1="130" x2="90" y2="160" class="hangman-part" id="leftLeg" style="display:none;" />
-                <line x1="120" y1="130" x2="150" y2="160" class="hangman-part" id="rightLeg" style="display:none;" />
+              <svg viewBox="0 0 220 220" id="hangmanSvg">
+                <!-- 1. Gallows -->
+                <g id="gallows" stroke="#8B5A2B" stroke-width="6" stroke-linecap="round" fill="none">
+                  <line x1="20"  y1="200" x2="200" y2="200"/>  <!-- chân đế -->
+                  <line x1="45"  y1="200" x2="45"  y2="20" />   <!-- cột dọc -->
+                  <line x1="45"  y1="20"  x2="140" y2="20" />  <!-- thanh ngang -->
+                  <line x1="140" y1="20"  x2="140" y2="40" />  <!-- móc treo -->
+ Dracula</g>
+                <!-- 2. Rope -->
+                <g id="rope" stroke="#d9d3bd" stroke-width="4" stroke-linecap="round" fill="none">
+                  <line x1="140" y1="40" x2="140" y2="80"/> <!-- Extended rope to y2="80" -->
+                </g>
+                <!-- 3. Person (swing) -->
+                <g id="personGroup" class="swing">
+                  <!-- Đầu -->
+                  <circle id="head" cx="140" cy="80" r="20" fill="#fff" stroke="#fff" stroke-width="3"/>
+                  <!-- Mặt cười -->
+                  <g id="faceSmile" fill="#494949" stroke="#494949">
+                    <circle cx="133" cy="75" r="2.5"/>
+                    <circle cx="147" cy="75" r="2.5"/>
+                    <path d="M130 87 Q140 95 150 87" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  </g>
+                  <!-- Mặt chết (ẩn sẵn) -->
+                  <g id="faceDead" style="display:none" stroke="#494949" fill="#494949">
+                    <!-- mắt X -->
+                    <path d="M128 70 l6 6 M134 70 l-6 6" stroke-width="2" fill="none"/>
+                    <path d="M146 70 l6 6 M152 70 l-6 6" stroke-width="2" fill="none"/>
+                    <!-- miệng thẳng -->
+                    <line x1="130" y1="90" x2="150" y2="90" stroke-width="2" stroke-linecap="round"/>
+                  </g>
+                  <!-- Thân & tay chân (ẩn sẵn) -->
+                  <line x1="140" y1="100" x2="140" y2="150" class="hangman-part" id="body" style="display:none;"/>
+                  <line x1="140" y1="110" x2="110" y2="130" class="hangman-part" id="leftArm" style="display:none;"/>
+                  <line x1="140" y1="110" x2="170" y2="130" class="hangman-part" id="rightArm" style="display:none;"/>
+                  <line x1="140" y1="150" x2="110" y2="180" class="hangman-part" id="leftLeg" style="display:none;"/>
+                  <line x1="140" y1="150" x2="170" y2="180" class="hangman-part" id="rightLeg" style="display:none;"/>
+                </g>
               </svg>
             </div>
             <div class="hint-container" id="hintContainer">Gợi ý: <span id="hintText"></span></div>
@@ -263,7 +289,7 @@
         <!-- Theme Selection Page -->
         <div id="themePage" class="page">
           <h1>Chọn chủ đề</h1>
-          <div class="mode-card" sartifactsdata-theme="animals"><h3>Động vật</h3><p>Các loài động vật.</p></div>
+          <div class="mode-card" data-theme="animals"><h3>Động vật</h3><p>Các loài động vật.</p></div>
           <div class="mode-card" data-theme="food"><h3>Thức ăn</h3><p>Món ăn & đồ uống.</p></div>
           <div class="mode-card" data-theme="countries"><h3>Quốc gia</h3><p>Tên quốc gia.</p></div>
           <div class="mode-card" data-theme="sports"><h3>Thể thao</h3><p>Các môn thể thao.</p></div>
@@ -315,9 +341,14 @@
   <!-- Scripts -->
   <script src="lib/finisherjs/finisher-header.es5.min.js"></script>
   <script src="lib/data/gameData.js"></script>
-  <script src="lib/logic/gameLogic.js"></script>
+  <script src="lib/logic/utils.js"></script>
+  <script src="lib/logic/state.js"></script>
+  <script src="lib/logic/dom.js"></script>
+  <script src="lib/logic/audio.js"></script>
+  <script src="lib/logic/game.js"></script>
+  <script src="lib/logic/events.js"></script>
+  <script src="lib/logic/init.js"></script>
 
-  
   <script type="text/javascript">
     new FinisherHeader({
       "count": 100,
