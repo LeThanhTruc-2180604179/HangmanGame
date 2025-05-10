@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Cascadia Code", sans-serif;
   align-items: center;
 }
 
@@ -97,7 +97,7 @@ h1 {
   font-size: 2.165625rem; /* Tăng từ 2.0625rem (2.0625 * 1.05) */
   color: #ffffff;
   text-shadow: 1.7325px 1.7325px 3.465px rgba(0, 0, 0, 0.3); /* Tăng từ 1.65px, 3.3px */
-  font-family: "Roboto", sans-serif;
+  font-family: "Cascadia Code", sans-serif;
   font-weight: 400;
   font-style: normal;
   padding-bottom: 43.3125px; /* Tăng từ 41.25px (41.25 * 1.05) */
@@ -109,7 +109,7 @@ h2 {
   margin-bottom: 12.99375px; /* Tăng từ 12.375px (12.375 * 1.05) */
   font-size: 1.55925rem; /* Tăng từ 1.485rem (1.485 * 1.05) */
   padding-bottom: 25.9875px; /* Tăng từ 24.75px (24.75 * 1.05) */
-  font-family: "Roboto", sans-serif;
+  font-family: "Cascadia Code", sans-serif;
 }
 
 p {
